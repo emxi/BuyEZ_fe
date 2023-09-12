@@ -1,20 +1,20 @@
 export default function Header() {
     return (
-        <header className="bg-white">
-            <div className="mx-auto max-w-[1400px] flex justify-between items-center h-14">
+        <header className="bg-white px-8">
+            <div className="mx-auto flex h-14 max-w-[1400px] items-center justify-between">
                 {/* LOGO */}
-                <div className="text-primary font-black text-3xl">Logo</div>
+                <div className="text-3xl font-black text-primary">Logo</div>
 
                 {/* SEARCH */}
-                <div className="border w-[800px] min-w-[500px] rounded flex justify-between items-center">
-                    <div className="text-gray-500 flex pl-3 items-center">
+                <div className="flex w-[800px] min-w-[500px] items-center justify-between rounded border">
+                    <div className="flex items-center pl-3 text-gray-500">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="w-5 h-5"
+                            className="h-5 w-5"
                         >
                             <path
                                 strokeLinecap="round"
@@ -26,23 +26,23 @@ export default function Header() {
                     <div className="flex-1">
                         <input
                             type="text"
-                            className="outline-none w-full rounded py-1.5 px-2"
+                            className="w-full rounded px-2 py-1.5 outline-none"
                             placeholder="Tìm kiếm sản phẩm"
                         />
                     </div>
-                    <button className="border-l text-primary px-2">Tìm kiếm</button>
+                    <button className="border-l px-2 text-primary">Tìm kiếm</button>
                 </div>
 
                 {/* Action group */}
                 <div className="flex items-center space-x-2">
                     {/* NAV */}
                     <div className="flex items-center">
-                        <button className="flex items-center px-4 py-2 rounded-lg text-primary space-x-1 hover:bg-primary/10">
+                        <button className="flex items-center space-x-1 rounded-lg px-4 py-2 text-primary hover:bg-primary/10">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
-                                className="w-5 h-5"
+                                className="h-5 w-5"
                             >
                                 <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                                 <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
@@ -50,12 +50,12 @@ export default function Header() {
                             <span>Trang chủ</span>
                         </button>
                         <button className="flex items-center">
-                            <div className="flex items-center px-4 py-2 rounded-lg text-gray-500 space-x-1 hover:bg-gray-100">
+                            <div className="flex items-center space-x-1 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
-                                    className="w-5 h-5"
+                                    className="h-5 w-5"
                                 >
                                     <path
                                         fillRule="evenodd"
@@ -70,17 +70,17 @@ export default function Header() {
                     </div>
 
                     {/* DIVIDER */}
-                    <div className="border-l h-7"></div>
+                    <div className="h-7 border-l"></div>
 
                     {/* CART */}
-                    <button className="flex items-center text-primary relative px-2 py-2">
+                    <button className="relative flex items-center px-2 py-2 text-primary">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="w-6 h-6"
+                            className="h-6 w-6"
                         >
                             <path
                                 strokeLinecap="round"
@@ -89,7 +89,7 @@ export default function Header() {
                             />
                         </svg>
 
-                        <div className="bg-red-400 px-1 top-0 right-0 absolute rounded-full text-white font-medium text-xs">
+                        <div className="absolute right-0 top-0 rounded-full bg-red-400 px-1 text-xs font-medium text-white">
                             0
                         </div>
                     </button>
