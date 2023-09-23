@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
+
 export default function Header() {
     return (
         <header className="fixed left-0 right-0 top-0 bg-white px-8">
             <div className="mx-auto flex h-14 max-w-[1400px] items-center justify-between">
                 {/* LOGO */}
-                <div className="text-3xl font-black text-primary">Logo</div>
+                <Link to="/" className="text-3xl font-black text-primary">
+                    Logo
+                </Link>
 
                 {/* SEARCH */}
                 <div className="flex w-[800px] min-w-[500px] items-center justify-between rounded border">
