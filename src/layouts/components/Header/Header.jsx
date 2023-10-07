@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import clsx from 'clsx';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -41,7 +42,18 @@ export default function Header() {
                 <div className="flex items-center space-x-2">
                     {/* NAV */}
                     <div className="flex items-center">
-                        <button className="flex items-center space-x-1 rounded-lg px-4 py-2 text-primary hover:bg-primary/10">
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                clsx(
+                                    'flex items-center space-x-1 rounded-lg px-4 py-2 text-gray-500 hover:bg-primary/10',
+                                    {
+                                        'text-primary': isActive,
+                                    },
+                                )
+                            }
+                            end
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -52,7 +64,35 @@ export default function Header() {
                                 <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                             </svg>
                             <span>Trang chủ</span>
-                        </button>
+                        </NavLink>
+                        <NavLink
+                            to="/live"
+                            className={({ isActive }) =>
+                                clsx(
+                                    'flex items-center space-x-1 rounded-lg px-4 py-2 text-gray-500 hover:bg-primary/10',
+                                    {
+                                        'text-primary': isActive,
+                                    },
+                                )
+                            }
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="h-6 w-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
+                                />
+                            </svg>
+
+                            <span>Livestream</span>
+                        </NavLink>
+
                         <button className="flex items-center">
                             <div className="flex items-center space-x-1 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100">
                                 <svg
