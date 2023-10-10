@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard';
 import categories from '../../data/categories';
+import products from '../../data/products';
+import groupBy from '../../utils/groupBy';
+import byId from '../../utils/byId';
 
 export default function HomePage() {
+    const productsById = byId(products);
+    const trendingProductIds = [1, 6, 8, 2];
+    const newProductIds = [7, 5, 3, 8];
     return (
         <div className="mx-auto grid max-w-[1400px] grid-cols-5 gap-6 px-8 pt-5">
             {/* SIDEBAR */}
@@ -107,8 +113,8 @@ export default function HomePage() {
                     <h2 className="text-xl font-bold">Sản phẩm bán chạy</h2>
                     <div className="grid grid-cols-4 gap-3 pt-4">
                         {/* PRODUCT CARD */}
-                        {[1, 2, 3, 4].map(() => (
-                            <ProductCard product={{}} />
+                        {trendingProductIds.map((id) => (
+                            <ProductCard product={productsById[id]} key={id} />
                         ))}
                     </div>
                 </div>
@@ -118,8 +124,8 @@ export default function HomePage() {
                     <h2 className="text-xl font-bold">Sản phẩm mới nhất</h2>
                     <div className="grid grid-cols-4 gap-3 pt-4">
                         {/* PRODUCT CARD */}
-                        {[1, 2, 3, 4].map(() => (
-                            <ProductCard product={{}} />
+                        {newProductIds.map((id) => (
+                            <ProductCard product={productsById[id]} key={id} />
                         ))}
                     </div>
                 </div>

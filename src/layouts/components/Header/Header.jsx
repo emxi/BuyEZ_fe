@@ -7,7 +7,7 @@ export default function Header() {
             <div className="mx-auto flex h-14 max-w-[1400px] items-center justify-between">
                 {/* LOGO */}
                 <Link to="/" className="text-3xl font-black text-primary">
-                    Logo
+                    <img src="/assets/images/logo.png" className="h-11 object-cover" />
                 </Link>
 
                 {/* SEARCH */}

@@ -1,23 +1,35 @@
+import { useParams } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard';
+import products from '../../data/products';
+import categories from '../../data/categories';
+import byId from '../../utils/byId';
+import store from '../../data/store';
+import priceFormat from '../../utils/priceFormat';
+import { useEffect, useState } from 'react';
 
 function DetailPage() {
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    useEffect(() => {
+        setProduct(products.find((product) => product.id == id));
+    }, [id]);
+    const productByIds = byId(products);
+    const categoryByIds = byId(categories);
+    const storeByIds = byId(store);
     return (
         <div className="mx-auto max-w-[1200px] space-y-5 px-8 pt-5">
             <div className="flex items-start space-x-5 ">
                 <div className="w-[450px] rounded-lg bg-white p-2">
-                    <img
-                        src="https://salt.tikicdn.com/cache/368x368/ts/product/c1/59/2b/a0bb7628ef5cc678c37672b71a7f6bb4.jpg.webp"
-                        className="w-full object-cover"
-                    />
+                    <img src={product.image} className="w-full object-cover" />
                 </div>
 
                 <div className="flex-1 space-y-3">
                     {/* NAME SECTION */}
                     <div className="rounded-lg bg-white p-3">
-                        <h1 className="text-lg font-medium">
-                            Điện Thoại Oppo A54 (4GB/128GB) - Hàng Chính Hãng
-                        </h1>
-                        <p className="mt-1 text-2xl font-bold text-primary">3.190.000 đ</p>
+                        <h1 className="text-lg font-medium">{product.name}</h1>
+                        <p className="mt-1 text-2xl font-bold text-primary">
+                            {priceFormat(product.price) + ' ₫'}
+                        </p>
                     </div>
                     {/* ADD TO CART SECTION */}
                     <div className="space-y-4 rounded-lg bg-white p-3">
@@ -68,7 +80,9 @@ function DetailPage() {
                         </div>
                         <div>
                             <p className="font-semibold">Tạm tính</p>
-                            <p className="mt-1 text-2xl font-medium">3.190.000 đ</p>
+                            <p className="mt-1 text-2xl font-medium">
+                                {priceFormat(product.price) + ' ₫'}
+                            </p>
                         </div>
                         <div className="flex space-x-2">
                             <button className="rounded bg-primary px-6 py-2 text-white hover:bg-primary/80">
@@ -84,26 +98,24 @@ function DetailPage() {
                     <div className="rounded-lg bg-white p-3">
                         <p className="font-semibold">Thông tin người bán</p>
                         <div className="mt-1 flex items-center space-x-2">
-                            <div className="h-8 w-8 rounded-full bg-orange-500"></div>
-                            <p className="font-semibold">Cửa hàng di động</p>
+                            <img
+                                className="h-8 w-8 rounded-full bg-orange-500 object-cover"
+                                src={storeByIds[product?.storeId]?.avatar}
+                            />
+                            <p className="font-semibold">{storeByIds[product?.storeId]?.name}</p>
                         </div>
                         <p className="text-gray-600">
-                            Địa chỉ: Số 285, đường Cách Mạng Tháng 8, phường 12, quận 10, Thành phố
-                            Hồ Chí Minh
+                            {'Địa chỉ: ' + storeByIds[product?.storeId]?.address}
                         </p>
-                        <p className="text-gray-600">Sản phẩm: 350</p>
+                        <p className="text-gray-600">
+                            {'Sản phẩm: ' + storeByIds[product?.storeId]?.quantity}
+                        </p>
                     </div>
 
                     {/* DESCRIPTION SECTION */}
                     <div className="rounded-lg bg-white p-3">
                         <p className="font-semibold">Mô tả sản phẩm</p>
-                        <p className="mt-1 text-gray-600">
-                            Lốc 04 Hộp Sữa Nước Abbott Grow Gold 180ml sở hữu công thức dinh dưỡng
-                            được thiết kế khoa học riêng cho các bé từ 2 tuổi, giàu GOS, Vitamin và
-                            khoáng chất giúp bé phát triển toàn diện. Sản phẩm cũng giúp bé hoàn
-                            thiện hệ miễn dịch một cách hiệu quả trong giai đoạn này. Bao bì sẽ thay
-                            đổi theo từng đợt nhập hàng
-                        </p>
+                        <p className="mt-1 text-gray-600">{product.description}</p>
                     </div>
                 </div>
             </div>
@@ -111,8 +123,8 @@ function DetailPage() {
                 <h2 className="text-xl font-bold">Sản phẩm tương tự</h2>
                 <div className="grid grid-cols-4 gap-3 pt-4">
                     {/* PRODUCT CARD */}
-                    {[1, 2, 3, 4].map(() => (
-                        <ProductCard product={{}} />
+                    {product?.relateProducts?.map((_id) => (
+                        <ProductCard product={productByIds[_id]} key={_id} />
                     ))}
                 </div>
             </div>
