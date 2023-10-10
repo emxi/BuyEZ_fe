@@ -17,7 +17,10 @@ function LiveDetailPage() {
             <div className="flex flex-1 flex-col rounded-lg bg-white">
                 <div className="border-b p-3">
                     <div className="mt-1 flex items-center space-x-2">
-                        <div className="h-7 w-7 rounded-full bg-primary" />
+                        <img
+                            className="h-7 w-7 rounded-full bg-primary object-cover"
+                            src={l?.store?.avatar}
+                        />
                         <p className="text-gray-600">{l?.store?.name}</p>
                     </div>
                     <h2 className="mt-1 text-lg font-bold">{l?.name}</h2>
