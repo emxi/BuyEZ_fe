@@ -23,7 +23,61 @@ export default function Chat() {
                             </svg>
                         </button>
                     </header>
-                    <div className="flex-1"></div>
+                    {/* MAIN CHAT */}
+                    <div className="flex-1">
+                        {/* ME */}
+                        <div className="flex justify-end p-3">
+                            <p className="rounded bg-primary px-3 py-2 text-white">
+                                Cần mua áo phù hợp cho mùa hè
+                            </p>
+                        </div>
+                        <div className="flex justify-start p-3">
+                            <div className="flex justify-start space-x-2">
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="h-5 w-5"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                                        />
+                                    </svg>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="rounded bg-gray-100 px-3 py-2">
+                                        <h3 className="text-sm font-bold text-primary">Chatbot</h3>
+                                        <p>
+                                            Bạn có thể lựa chọn những bộ áo màu sáng. Chất liệu vải
+                                            mỏng nhẹ, thoáng mát.
+                                        </p>
+                                    </div>
+                                    <div className="mt-2 flex space-x-2">
+                                        <img
+                                            src="/assets/images/product/thoitrang1.webp"
+                                            className="h-24 w-24 rounded border bg-gray-500 object-contain"
+                                        />
+                                        <img
+                                            src="/assets/images/product/thoitrang2.webp"
+                                            className="h-24 w-24 rounded border bg-gray-500 object-contain"
+                                        />
+                                        <img
+                                            src="/assets/images/product/thoitrang3.webp"
+                                            className="h-24 w-24 rounded border bg-gray-500 object-contain"
+                                        />
+                                        <button className="flex h-24 w-24 items-center justify-center rounded border text-primary">
+                                            Xem thêm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="flex items-center space-x-2 border-t p-3">
                         <input
                             type="text"
