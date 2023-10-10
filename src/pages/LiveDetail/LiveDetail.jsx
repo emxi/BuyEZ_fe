@@ -1,4 +1,14 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import live from '../../data/live';
+
 function LiveDetailPage() {
+    const { id } = useParams();
+    const [l, setL] = useState({});
+    useEffect(() => {
+        setL(live.find((_l) => _l.id == id));
+    }, [id]);
+
     return (
         <div className="mx-auto flex max-w-[900px] space-x-3 px-8 pt-5">
             <div className="flex h-[640px] w-[400px] overflow-hidden rounded-lg bg-blue-400">
@@ -8,13 +18,10 @@ function LiveDetailPage() {
                 <div className="border-b p-3">
                     <div className="mt-1 flex items-center space-x-2">
                         <div className="h-7 w-7 rounded-full bg-primary" />
-                        <p className="text-gray-600">Tên cửa hàng gì đó</p>
+                        <p className="text-gray-600">{l?.store?.name}</p>
                     </div>
-                    <h2 className="mt-1 text-lg font-bold">Khuyến mãi lớn cuối tuần</h2>
-                    <p className="text-gray-600">
-                        Sản phẩm cũng giúp bé hoàn thiện hệ miễn dịch một cách hiệu quả trong giai
-                        đoạn này
-                    </p>
+                    <h2 className="mt-1 text-lg font-bold">{l?.name}</h2>
+                    <p className="text-gray-600">{l?.description}</p>
                 </div>
                 <div className="flex-1 border-b">
                     <div className="flex space-x-2 p-3">

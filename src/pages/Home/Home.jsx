@@ -39,13 +39,13 @@ export default function HomePage() {
                     <div className="col-span-3 overflow-hidden rounded-xl">
                         <img
                             className="h-full w-full object-cover"
-                            src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/38/c1/6e/f8ff74034be9fd2836975bd4ad1216cb.png.webp"
+                            src="/assets/images/banner.png"
                         />
                     </div>
                     <div className="overflow-hidden rounded-xl">
                         <img
                             className="h-full w-full object-cover"
-                            src="https://salt.tikicdn.com/cache/w750/ts/tikimsp/19/82/df/30d5cd12b66b94049636a478233016a3.png.webp"
+                            src="/assets/images/banner-small.webp"
                         />
                     </div>
                 </div>
