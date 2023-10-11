@@ -8,7 +8,7 @@ const store = [
     },
     {
         id: 2,
-        name: 'Thời trang trẻ',
+        name: 'Thế kỷ store',
         avatar: '/assets/images/store/thoitrang.png',
         address: 'Số 285, đường Cách Mạng Tháng 8, phường 12, quận 10, Thành phố Hồ Chí Minh',
         quantity: 340,

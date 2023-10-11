@@ -4,11 +4,12 @@ import categories from '../../data/categories';
 import products from '../../data/products';
 import groupBy from '../../utils/groupBy';
 import byId from '../../utils/byId';
+import clsx from 'clsx';
 
 export default function HomePage() {
     const productsById = byId(products);
-    const trendingProductIds = [1, 6, 8, 2];
-    const newProductIds = [7, 5, 3, 8];
+    const trendingProductIds = [1, 2, 3, 4];
+    const newProductIds = [5, 6, 7, 8];
     return (
         <div className="mx-auto grid max-w-[1400px] grid-cols-5 gap-6 px-8 pt-5">
             {/* SIDEBAR */}
@@ -19,13 +20,13 @@ export default function HomePage() {
                         {categories.map((category) => (
                             <Link
                                 key={category.id}
-                                className="flex w-full items-center space-x-2 rounded-md px-3 py-3 hover:bg-gray-100"
+                                className={clsx(
+                                    'flex w-full items-center space-x-2 rounded-md px-3 py-3 hover:bg-gray-100',
+                                    {
+                                        'bg-blue-100 text-primary': category.active,
+                                    },
+                                )}
                             >
-                                <img
-                                    className="h-8 w-8 rounded object-cover"
-                                    src={category.image}
-                                />
-
                                 <span className="leading-5">{category.name}</span>
                             </Link>
                         ))}
@@ -39,19 +40,19 @@ export default function HomePage() {
                     <div className="col-span-3 overflow-hidden rounded-xl">
                         <img
                             className="h-full w-full object-cover"
-                            src="/assets/images/banner.png"
+                            src="/assets/images/banner2.png"
                         />
                     </div>
                     <div className="overflow-hidden rounded-xl">
                         <img
                             className="h-full w-full object-cover"
-                            src="/assets/images/banner-small.webp"
+                            src="/assets/images/banner.png"
                         />
                     </div>
                 </div>
 
                 {/*  */}
-                <div className="flex space-x-6 rounded-md bg-white px-4 py-3 font-semibold text-primary">
+                {/* <div className="flex space-x-6 rounded-md bg-white px-4 py-3 font-semibold text-primary">
                     <div className="flex items-center space-x-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +107,11 @@ export default function HomePage() {
 
                         <p>Hỗ trợ tận tình</p>
                     </div>
-                </div>
+                </div> */}
 
                 {/* TRENDING */}
                 <div className="rounded-md bg-white p-4">
-                    <h2 className="text-xl font-bold">Sản phẩm bán chạy</h2>
+                    <h2 className="text-xl font-bold">Sản phẩm phổ biến</h2>
                     <div className="grid grid-cols-4 gap-3 pt-4">
                         {/* PRODUCT CARD */}
                         {trendingProductIds.map((id) => (
@@ -121,7 +122,7 @@ export default function HomePage() {
 
                 {/* NEW */}
                 <div className="rounded-md bg-white p-4">
-                    <h2 className="text-xl font-bold">Sản phẩm mới nhất</h2>
+                    <h2 className="text-xl font-bold">Dành cho bạn</h2>
                     <div className="grid grid-cols-4 gap-3 pt-4">
                         {/* PRODUCT CARD */}
                         {newProductIds.map((id) => (

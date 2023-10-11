@@ -3,8 +3,8 @@ import priceFormat from '../../utils/priceFormat';
 
 export default function ProductCard({ product }) {
     return (
-        <Link to={'/' + product?.id} className="rounded-md border bg-white hover:shadow">
-            <img className="h-[155px] w-full rounded-md object-contain" src={product?.image} />
+        <Link to={'/' + product?.id} className="rounded-md bg-white shadow-md hover:shadow-lg">
+            <img className="h-[230px] w-full rounded-md object-cover" src={product?.image} />
             <div className="p-3">
                 <h2 className="overflow-x-hidden text-ellipsis whitespace-nowrap font-medium">
                     {product?.name}

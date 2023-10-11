@@ -28,46 +28,34 @@ export default function Chat() {
                         {/* ME */}
                         <div className="flex justify-end p-3">
                             <p className="rounded bg-primary px-3 py-2 text-white">
-                                Cần mua áo phù hợp cho mùa hè
+                                Cách làm cho da ít bị khô
                             </p>
                         </div>
                         <div className="flex justify-start p-3">
                             <div className="flex justify-start space-x-2">
-                                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="h-5 w-5"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-                                        />
-                                    </svg>
-                                </div>
+                                <img
+                                    className="block h-11 w-11 rounded-full bg-cyan-100 pl-0.5"
+                                    src="/assets/images/chatbot.png"
+                                />
                                 <div className="flex-1">
                                     <div className="rounded bg-gray-100 px-3 py-2">
                                         <h3 className="text-sm font-bold text-primary">Chatbot</h3>
                                         <p>
-                                            Bạn có thể lựa chọn những bộ áo màu sáng. Chất liệu vải
-                                            mỏng nhẹ, thoáng mát.
+                                            Bạn có thể lựa chọn một số sản phẩm dưỡng da chất lượng
+                                            và phù hợp. Sử dụng đúng cách sẽ giúp da ít bị khô!
                                         </p>
                                     </div>
                                     <div className="mt-2 flex space-x-2">
                                         <img
-                                            src="/assets/images/product/thoitrang1.webp"
+                                            src="/assets/images/product/product1.png"
                                             className="h-24 w-24 rounded border bg-gray-500 object-contain"
                                         />
                                         <img
-                                            src="/assets/images/product/thoitrang2.webp"
+                                            src="/assets/images/product/product2.png"
                                             className="h-24 w-24 rounded border bg-gray-500 object-contain"
                                         />
                                         <img
-                                            src="/assets/images/product/thoitrang3.webp"
+                                            src="/assets/images/product/product4.png"
                                             className="h-24 w-24 rounded border bg-gray-500 object-contain"
                                         />
                                         <button className="flex h-24 w-24 items-center justify-center rounded border text-primary">
@@ -79,6 +67,17 @@ export default function Chat() {
                         </div>
                     </div>
                     <div className="flex items-center space-x-2 border-t p-3">
+                        <button className="text-primary">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="h-6 w-6"
+                            >
+                                <path d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5z" />
+                                <path d="M6 10.5a.75.75 0 01.75.75v1.5a5.25 5.25 0 1010.5 0v-1.5a.75.75 0 011.5 0v1.5a6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709v-1.5A.75.75 0 016 10.5z" />
+                            </svg>
+                        </button>
                         <input
                             type="text"
                             placeholder="Nhập nội dung chat"
@@ -97,40 +96,23 @@ export default function Chat() {
                     </div>
                 </div>
             )}
-            <button
-                className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white"
+            <div
+                className="relative flex h-20 w-20 items-center justify-center rounded-full "
                 onClick={() => setOpen(!open)}
             >
+                <div className="chatbot-bg absolute left-[50%] top-[50%] h-20 w-20 -translate-x-[50%] -translate-y-[50%] rounded-full bg-transparent"></div>
                 {open ? (
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-8 w-8"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
-                            clipRule="evenodd"
-                        />
-                    </svg>
+                    <img
+                        className="absolute ml-1 block h-16 w-16"
+                        src="/assets/images/chatbot.png"
+                    />
                 ) : (
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="h-8 w-8"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-                        />
-                    </svg>
+                    <img
+                        className="absolute ml-1 block h-16 w-16"
+                        src="/assets/images/chatbot.png"
+                    />
                 )}
-            </button>
+            </div>
         </div>
     );
 }

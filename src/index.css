@@ -7,3 +7,9 @@
         @apply bg-gray-100;
     }
 }
+
+@layer components {
+    .chatbot-bg {
+        background: radial-gradient(circle, rgba(9, 183, 255, 1) 28%, rgba(60, 201, 255, 0) 100%);
+    }
+}
